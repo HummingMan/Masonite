@@ -1,7 +1,7 @@
-"""Web Routes."""
-
 from masonite.routes import Get, Post
+from app.http.controllers.ToppageController import ToppageController
 
 ROUTES = [
-    Get('/', 'WelcomeController@show').name('welcome'),
+    get('/', ToppageController.show),
+    get('/my_site/api/get_toppage', ToppageController.get_toppage)
 ]
